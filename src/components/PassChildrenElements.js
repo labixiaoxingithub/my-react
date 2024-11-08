@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function ParentComponent() {
+
+  const [msgColor, setMsgColor] = useState('blue');
+
   return (
     <div>
-      <ChildComponent>
+      {msgColor}
+      <ChildComponent messageColor={msgColor}>
         <p>Child Element 1</p>
         <p>Child Element 2</p>
       </ChildComponent>
+      <button onClick={() => {setMsgColor('red')}}>Change Color</button>
     </div>
   );
 }
 
-function ChildComponent({ children }) {
-  return <div>{children}</div>;
+function ChildComponent({ messageColor, children }) {
+
+  const divStyle = {
+    color: messageColor
+  };
+
+  console.log('ccc');
+
+  setMsgColor
+
+  return <div style={divStyle}>{children}</div>;
 }
 
 

@@ -12,7 +12,7 @@ import PersonList from 'components/PersonList';
 export default function App() {
   return (
     // <Gallery />
-    // <ParentComponent />
-    <PersonList /> 
+    <ParentComponent />
+    // <PersonList /> 
   );
 }
